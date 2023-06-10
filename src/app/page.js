@@ -1,95 +1,44 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+
+import { Stack, Text, Image, Box } from '@chakra-ui/react';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Stack 
+      height={"100vh"} 
+      minW={"100vw"} 
+      position={'relative'}
+      >
+        {/* <Image src='https://img.freepik.com/premium-photo/cargo-plane-flying-city-dusk-with-sun-setting-background_124507-114458.jpg?w=1060' /> */}
+        <Image position="absolute" right={0} height="100%" width={['100%', 900]} objectFit="contain" src="./map-bg.jpeg" />
+        <Stack position={'absolute'} width="100%">
+          <Box width="100%" height="100vh">
+            <Stack paddingX={50}>
+              <Text fontWeight="extrabold" color="black" fontSize="6xl">Viajas a algún lado?</Text>
+              <Text fontWeight="extrabold" color="black" fontSize="2xl">Ven a mi fiesta</Text>
+            </Stack>
+            <Stack gap={0} marginTop={100} marginBottom={0} width={700} height={400}>
+              <Stack bg="trasparent" flexDirection="row" height={50} width="100%">
+                <Stack cursor="pointer" justifyContent="center" alignItems="center" width={120} bg="gray.800">
+                  <Text color="white">Información</Text>
+                </Stack>
+                <Stack cursor="pointer" alignItems="center" justifyContent="center" width={150}>
+                  <Text fontWeight="bold" color="black">Mensajes</Text>
+                </Stack>
+                <Stack cursor="pointer" alignItems="center" justifyContent="center" width={150}>
+                  <Text fontWeight="bold" color="black">Ckeck In</Text>
+                </Stack>
+                <Stack cursor="pointer" alignItems="center" justifyContent="center" width={150}>
+                  <Text fontWeight="bold" color="black">Estado del vuelo</Text>
+                </Stack>
+              </Stack>
+              <Stack margin={0} width="100%" height="100%" bg="gray.600">
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+              </Stack>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            </Stack>
+          </Box>
+        </Stack>
+    </Stack>
   )
 }

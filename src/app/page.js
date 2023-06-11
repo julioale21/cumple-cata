@@ -26,7 +26,7 @@ export default function Home() {
       minW={"100vw"} 
       position={'relative'}
       >
-        <Image position="absolute" right={0} height="100%" width={['100%', 900]} objectFit="contain" src="./map-bg.jpeg" />
+        <Image position="absolute" right={0} height="100%" width={['375px', 1000, 1000]} objectFit="contain" src="./map-mundi-bg.webp" />
         <Stack position={'absolute'} width="100%">
           <Box width="100%" height="100vh">
             <Stack paddingX={50}>

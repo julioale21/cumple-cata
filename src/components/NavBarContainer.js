@@ -13,6 +13,7 @@ export const NavBarContainer = ({ children, ...props }) => {
         paddingY={3}
         bg={"transparent"}
         color={["white", "white", "primary.700", "primary.700"]}
+        border="1px solid gray"
         {...props}
       >
         {children}

@@ -26,12 +26,12 @@ export default function Home() {
       minW={"100vw"} 
       position={'relative'}
       >
-        <Image position="absolute" right={0} height="100%" width={[1000, 1000, 1000]} objectFit={["cover", "contain"]} src="./map-mundi-bg.webp" />
+        <Image position="absolute" right={0} height="100%" width={[600, 1000, 1000]} objectFit={["cover", "contain"]} src="./map-mundi-bg.webp" />
         <Stack position={'absolute'} width="100%" height="100%">
           <Box width="100%" height="100%">
-            <Stack paddingX={50}>
-              <Text fontWeight="extrabold" color="black" fontSize="6xl">Flight with us</Text>
-              <Text fontWeight="extrabold" color="black" fontSize="2xl">Come to my party</Text>
+            <Stack paddingX={50} marginTop={[10, 0]}>
+              <Text fontWeight="extrabold" color="black" fontSize={["4xl","6xl"]}>Flight with me</Text>
+              <Text fontWeight="extrabold" color="black" fontSize={["xl","2xl"]}>Come to my party</Text>
             </Stack>
 
             <Tabs size={['xs', 'sm', 'md']} variant='enclosed' marginTop={[10, 100]} marginBottom={0} width={['100%',750]} height={400}>

@@ -1,7 +1,7 @@
 'use client'
 
-import CountDownTab from '@/components/tabs/CountDownTab';
-import { InformationTab } from '@/components/tabs/InformationTab';
+import CountDownTab from '@/components/tabs/countdown/CountDownTab';
+import { InformationTab } from '@/components/tabs/information/InformationTab';
 import { 
   Stack, 
   Text, 
@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 
 import { date } from '../constants/common-config';
+import { MessagesTab } from '@/components/tabs/messages/MessagesTab';
 
 export default function Home() {
 
@@ -36,24 +37,25 @@ export default function Home() {
 
             <Tabs size={['xs', 'sm', 'md']} variant='enclosed' marginTop={[10, 100]} marginBottom={0} width={['100%',750]} height={400}>
               <TabList>
+                <Tab padding={2}  fontSize={["xs", "unset"]} _selected={{ color:"white", bg:"gray.800"}}>Flight Status</Tab>
                 <Tab padding={2} fontSize={["xs", "unset"]} _selected={{ color:"white", bg:"gray.800"}}>Information</Tab>
                 <Tab padding={2} fontSize={["xs", "unset"]} _selected={{ color:"white", bg:"gray.800"}}>Menssages</Tab>
                 <Tab padding={2} fontSize={["xs", "unset"]} _selected={{ color:"white", bg:"gray.800"}}>Check In</Tab>
-                <Tab padding={2}  fontSize={["xs", "unset"]} _selected={{ color:"white", bg:"gray.800"}}>Flight Status</Tab>
               </TabList>
 
               <TabPanels bg="blue.900" width="100%" height={[450, "100%"]}>
 
+                <CountDownTab targetDate={targetDate} />
+                
                 <InformationTab />
 
-                <TabPanel>
-                  <p>two!</p>
-                </TabPanel>
+                <MessagesTab />
+                
                 <TabPanel>
                   <p>three!</p>
                 </TabPanel>
 
-                <CountDownTab targetDate={targetDate} />
+                
 
               </TabPanels>
             </Tabs>

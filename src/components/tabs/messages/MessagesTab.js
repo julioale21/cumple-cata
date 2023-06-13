@@ -32,7 +32,7 @@ function validateMessage(value) {
 const MessagesTab = () => {
     return (
         <TabPanel height="100%">
-            <Stack flexDirection="column" width={500} margin="0 auto">
+            <Stack flexDirection="column" width={['100%',500]} margin="0 auto">
                 <Stack gap={0} marginTop={4} marginBottom={10} width="100%" alignItems="center" justifyContent="center">
                     <Text color="gray.300" fontSize="2xl">If you want to leave me a message. </Text>
                     <Text color="gray.300" fontSize="x-small">{`(Si deseas dejarme un mensaje)`}</Text>

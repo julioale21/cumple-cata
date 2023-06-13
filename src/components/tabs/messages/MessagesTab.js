@@ -10,6 +10,7 @@ import {
     Text 
 } from '@chakra-ui/react';
 import { Formik, Form, Field } from 'formik';
+import { MessageService } from '@/services/messageService';
 
 function validateName(value) {
     let error
@@ -39,9 +40,14 @@ const MessagesTab = () => {
                 </Stack>
                 <Formik 
                     initialValues={{ name: '', message: '' }}
-                    onSubmit={(values, actions) => {
-                        console.log('values', {values});
-                        console.log('actions', actions);
+                    onSubmit={async(values, actions) => {
+
+                        const response = await MessageService.createMessage({
+                            name: values.name,
+                            message: values.message
+                        });
+
+                        console.log('response', response);
                         setTimeout(() => {
                             actions.setSubmitting(false)
                         }, 2000)

@@ -11,14 +11,12 @@ import {
   TabList, 
   TabPanels, 
   Tab, 
-  TabPanel,
-  Card,
-  CardBody,
-  Heading
+  TabPanel
 } from '@chakra-ui/react';
 
 import { date } from '../constants/common-config';
 import { MessagesTab } from '@/components/tabs/messages/MessagesTab';
+import { CityCard } from '@/components/CityCard';
 
 export default function Home() {
 
@@ -62,54 +60,27 @@ export default function Home() {
             </Tabs>
 
             <Stack alignItems={["center", "flex-start"]} marginBottom={10} width="100%" marginTop={[100, 20]} flexDirection={["column", "row"]}>
-              <Card maxW="xs" marginBottom={10}>
-                <CardBody>
-                  <Image
-                    src='https://media.istockphoto.com/id/1185953092/es/foto/la-principal-atracci%C3%B3n-de-par%C3%ADs-y-toda-europa-es-la-torre-eiffel-en-los-rayos-de-la-puesta-de.jpg?s=612x612&w=0&k=20&c=Nt1dBmjjHRh3-kUC00ITXgv6LU3pkJD40w5NWPaaySQ='
-                    alt='Green double couch with wooden legs'
-                    borderRadius='lg'
-                  />
-                  <Stack mt='6' spacing='3'>
-                    <Heading size='md'>Paris</Heading>
-                    <Text>
-                      This sofa is perfect for modern tropical spaces, baroque inspired
-                      spaces, earthy toned spaces.
-                    </Text>
-                  </Stack>
-                </CardBody>
-              </Card>
-              <Card maxW="xs" marginBottom={10}>
-                <CardBody>
-                  <Image
-                    src='https://static5.depositphotos.com/1030296/395/i/450/depositphotos_3958211-stock-photo-new-york-cityscape-tourism-concept.jpg'
-                    alt='Green double couch with wooden legs'
-                    borderRadius='lg'
-                  />
-                  <Stack mt='6' spacing='3'>
-                    <Heading size='md'>New York</Heading>
-                    <Text>
-                      This sofa is perfect for modern tropical spaces, baroque inspired
-                      spaces, earthy.
-                    </Text>
-                  </Stack>
-                </CardBody>
-              </Card>
-              <Card maxW="xs" marginBottom={10}>
-                <CardBody>
-                  <Image
-                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HE7LHOkKSRYtng11aAtrvwQTdaGPK7lu8OL3e7_AvVIPn3e-1CgpJdLt-4LzjcAPEOA&usqp=CAU'
-                    alt='Green double couch with wooden legs'
-                    borderRadius='lg'
-                  />
-                  <Stack mt='6' spacing='3'>
-                    <Heading size='md'>Londres</Heading>
-                    <Text>
-                      This sofa is perfect for modern tropical spaces, baroque inspired
-                      spaces, earthy.
-                    </Text>
-                  </Stack>
-                </CardBody>
-              </Card>
+              <CityCard 
+                title="Paris"
+                text=" This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy toned spaces."
+                // imageURL="https://media.istockphoto.com/id/1185953092/es/foto/la-principal-atracci%C3%B3n-de-par%C3%ADs-y-toda-europa-es-la-torre-eiffel-en-los-rayos-de-la-puesta-de.jpg?s=612x612&w=0&k=20&c=Nt1dBmjjHRh3-kUC00ITXgv6LU3pkJD40w5NWPaaySQ="
+                imageURL="/cata-01.jpeg"
+              />
+              <CityCard 
+                title="New York"
+                text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+                // imageURL="https://static5.depositphotos.com/1030296/395/i/450/depositphotos_3958211-stock-photo-new-york-cityscape-tourism-concept.jpg"
+                imageURL="/cata-02.jpeg"
+              />
+              <CityCard 
+                title="Londres"
+                text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+                // imageURL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HE7LHOkKSRYtng11aAtrvwQTdaGPK7lu8OL3e7_AvVIPn3e-1CgpJdLt-4LzjcAPEOA&usqp=CAU"
+                imageURL="/cata-03.jpeg"
+              />
             </Stack>
           </Box>
         </Stack>

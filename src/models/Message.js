@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, models } from 'mongoose';
 
 const MessageSchema = new Schema({
   name: {
@@ -9,8 +9,17 @@ const MessageSchema = new Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: Date,
+  },
 }, { strict: true });
 
-const Message = model('Message', MessageSchema);
+MessageSchema.methods.toJSON = function() {
+  const { __v, _id, password, ...message } = this.toObject();
+  message.uid = _id;
+  return message;
+}
+
+const Message = models.Message || model('Message', MessageSchema);
 
 export default Message;

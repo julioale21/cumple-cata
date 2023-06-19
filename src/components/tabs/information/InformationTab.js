@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Stack, TabPanel, Text } from '@chakra-ui/react';
+import { Button, Image, Stack, TabPanel, Text } from '@chakra-ui/react';
 
 import { FlightTypeList } from './FlightTypeList';
 import { InformationItem } from './InformationItem';
@@ -8,7 +8,7 @@ import { FlightClassList } from './InformationClassList';
 const InformationTab = () => {
   return (
     <TabPanel height="100%">
-        <Stack flexDirection="column" justifyContent="center" height="100%">
+        {/* <Stack flexDirection="column" justifyContent="center" height="100%">
             <FlightTypeList marginBottom={25} paddingLeft={[0, 50]} justifyContent={"flex-start"} />
             <Stack marginBottom={5} flexDirection="row" justifyContent="space-around">
                 <InformationItem title="Flight to:" value="Catalina Ramirez Party" width={[150, 250]} />
@@ -27,6 +27,18 @@ const InformationTab = () => {
                 </Stack>
             </Stack>
             <FlightClassList marginTop={25} paddingLeft={[0, 50]} justifyContent={["flex-start"]} />
+        </Stack> */}
+        <Stack flexDirection="column" justifyContent="center" height="100%">
+            <Stack width="100%" gap={5} flexDirection="row" justifyContent="center">
+                <Image width={[150, 200]} src='/departure.png'  />
+                <Image width={[150, 200]} src='/passenger.png'  />
+            </Stack>
+            <Stack width="100%" flexDirection="row" justifyContent="center">
+                <Image width={470} src='/class.png' />
+            </Stack>
+            <Stack width="100%" flexDirection="row" justifyContent="center">
+                <Image width={420} height={150} src='/ticket.png' />
+            </Stack>
         </Stack>
     </TabPanel>
   )

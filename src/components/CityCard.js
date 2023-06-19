@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { 
-    Link, 
     Card, 
     CardBody, 
     Image, 
@@ -9,10 +8,11 @@ import {
     Text, 
     Stack 
 } from '@chakra-ui/react';
+import Link from 'next/link';
 
 const CityCard = ({text, title, imageURL }) => {
   return (
-    <Link>
+    <Link href="/">
         <Card maxW="xs" marginBottom={10}>
             <CardBody>
                 <Image

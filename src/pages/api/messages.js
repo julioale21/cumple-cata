@@ -5,15 +5,13 @@ import Message from "@/models/Message";
 
 
 export default async function handler(req = NextRequest, res = NextResponse) {
-    console.log('entro')
     if (req.method === 'POST') {
-        console.log('entro')
         try {
             connectMongo();
 
             const { name, message } = req.body;
 
-            const newMessage = new Message({ name, message });
+            const newMessage = new Message({ name, message, date: new Date() });
 
             await newMessage.save();
 
@@ -22,6 +20,19 @@ export default async function handler(req = NextRequest, res = NextResponse) {
             res.status(401).json({
                 msg: error
             })
+        }
+    } else if (req.method === 'GET') {
+        try {
+            connectMongo();
+
+            const messages = await Message.find();
+
+            return res.json(messages);
+            
+        } catch (error) {
+            res.status(401).json({
+                msg: error
+            });
         }
     } else {
       // Handle any other HTTP method

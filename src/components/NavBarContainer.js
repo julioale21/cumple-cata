@@ -10,10 +10,8 @@ export const NavBarContainer = ({ children, ...props }) => {
         wrap="wrap"
         w="100%"
         paddingX={8}
-        paddingY={3}
-        bg={"transparent"}
+        paddingY={1}
         color={["white", "white", "primary.700", "primary.700"]}
-        // border="1px solid gray"
         {...props}
       >
         {children}

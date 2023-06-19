@@ -3,13 +3,13 @@ import React from 'react';
 import { oswald } from '../../../utils/fonts';
 
 import { 
+  Image,
     Stack, 
     TabPanel, 
     Text
   } from '@chakra-ui/react';
 import { useCountdown } from '@/hooks/useCountDown';
 import { CountDownItem } from './CountDownItem';
-
 
 const CountDownTab = ({ targetDate }) => {
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
@@ -19,7 +19,10 @@ const CountDownTab = ({ targetDate }) => {
   } else {
     return (
       <TabPanel className={oswald.className} height="100%">
-          <Stack flexDirection="column" justifyContent="center" alignItems="center" width="100%" height="100%">
+          <Stack position="relative" flexDirection="column" justifyContent="center" alignItems="center" width="100%" height="100%">
+              <Stack position="absolute" width={["100", "60%"]} height="100%">
+                <Image src='/distance.png'  />
+              </Stack>
               <Stack width="100%" justifyContent="center">
                   <Text fontWeight="extrabold" textAlign="center" color="gray.300" fontSize={["3xl", "4xl"]}>Your Flight starts in</Text>
               </Stack>
@@ -29,6 +32,7 @@ const CountDownTab = ({ targetDate }) => {
                   <CountDownItem itemName="Minutes" value={minutes} />
                   <CountDownItem itemName="Seconds" value={seconds} />
               </Stack>
+              
           </Stack>
       </TabPanel>
     );

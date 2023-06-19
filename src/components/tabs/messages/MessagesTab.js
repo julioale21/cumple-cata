@@ -12,6 +12,13 @@ import {
 import { Formik, Form, Field } from 'formik';
 import { MessageService } from '@/services/messageService';
 
+import { oswald } from '../../../utils/fonts';
+
+import toast, { Toaster } from 'react-hot-toast';
+import Lottie from 'lottie-react';
+
+import MessageAnimation from '../../../animations/messages.json';
+
 function validateName(value) {
     let error
     if (!value) {
@@ -32,11 +39,16 @@ function validateMessage(value) {
 
 const MessagesTab = () => {
     return (
-        <TabPanel height="100%">
+        <TabPanel className={oswald.className} height="100%">
             <Stack flexDirection="column" width={['100%',500]} margin="0 auto">
-                <Stack gap={0} marginTop={4} marginBottom={10} width="100%" alignItems="center" justifyContent="center">
+                <Stack gap={0} marginTop={4}  width="100%" alignItems="center" justifyContent="center">
                     <Text color="gray.300" fontSize="2xl">If you want to leave me a message. </Text>
                     <Text color="gray.300" fontSize="x-small">{`(Si deseas dejarme un mensaje)`}</Text>
+                </Stack>
+                <Stack width="100%" justifyContent="center" alignItems="center">
+                    <Stack width="60px">
+                        <Lottie animationData={MessageAnimation} />
+                    </Stack>
                 </Stack>
                 <Formik 
                     initialValues={{ name: '', message: '' }}
@@ -47,18 +59,21 @@ const MessagesTab = () => {
                             message: values.message
                         });
 
-                        console.log('response', response);
-                        setTimeout(() => {
-                            actions.setSubmitting(false)
-                        }, 2000)
+                        actions.resetForm();
+                        
+                        if (response.status === 200 ) {
+                            toast.success('🥰 Thanks for sharing your message. (Gracias por compartir tu mensaje) 🥰', {
+                                icon:'👏'
+                            });
+                        }
                     }}
                 >
                     {(props) => (
                         <Form>
-                            <Field name='name' validate={validateName}>
+                            <Field  name='name' validate={validateName}>
                                 {({ field, form }) => (
-                                    <FormControl isInvalid={form.errors.name && form.touched.name}>
-                                        <Input color="white" {...field} placeholder='Enter your name' />
+                                    <FormControl  isInvalid={form.errors.name && form.touched.name}>
+                                        <Input bgGradient="linear(to-l, blue.600, blue.800)" color="white" {...field} placeholder='Enter your name' />
                                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                                     </FormControl>
                                 )}
@@ -67,19 +82,22 @@ const MessagesTab = () => {
                             <Field name='message' validate={validateMessage}>
                                 {({ field, form }) => (
                                     <FormControl isInvalid={form.errors.message && form.touched.message}>
-                                        <Textarea color="white" {...field} placeholder='Enter your message' />
+                                        <Textarea bgGradient="linear(to-l, blue.600, blue.800)" color="white" {...field} placeholder='Enter your message' />
                                         <FormErrorMessage>{form.errors.message}</FormErrorMessage>
                                     </FormControl>
                                 )}
                             </Field>
                             <Button
                                 mt={4}
-                                colorScheme='gray'
+                                backgroundColor="gray.800"
+                                color="white"
                                 isLoading={props.isSubmitting}
                                 type='submit'
+                                isDisabled={props.dirty === false || !props.isValid }
                             >
                                 Send
                             </Button>
+                            <Toaster position="bottom-center" />
                         </Form>
                     )}
 

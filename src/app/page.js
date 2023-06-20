@@ -38,7 +38,7 @@ export default function Home() {
         <Stack position={'absolute'} width="100%" height="100%">
           <Box width="100%" height="100%">
             <Stack paddingX={50} marginTop={[10, 0]}>
-              <Text fontWeight="extrabold" color="black" fontSize={["4xl","6xl"]}>Flight with me</Text>
+              <Text fontWeight="extrabold" color="blue.700" fontSize={["4xl","6xl"]}>Flight with me</Text>
               <Stack gap={5} flexDirection="row">
                 <CategoryItem icon="/flight.png" type="Flight" />
                 <CategoryItem icon="/hotel.png" type="Hotel" />
@@ -104,7 +104,6 @@ export default function Home() {
               <Text fontSize="2xl" fontWeight="bold">El destino</Text>
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2921.955974600666!2d-71.32046392359526!3d-42.91596947114664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961dad5df6bfa259%3A0xfe0d7e14a6c9a5c3!2sAsociaci%C3%B3n%20Sirio%20Libanesa!5e0!3m2!1ses!2sar!4v1687140839144!5m2!1ses!2sar" 
-                  allowfullscreen="" 
                   loading="lazy" 
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
             </Stack>

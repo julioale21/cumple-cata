@@ -3,6 +3,7 @@ import React from 'react';
 import { NavBarContainer } from './NavBarContainer';
 import Logo from './Logo';
 import { MenuToggle } from './MenuToggle';
+import { MenuLinks } from './MenuLinks';
 
 const Header = (props) => {
 
@@ -14,7 +15,7 @@ const toggle = () => setIsOpen(!isOpen);
     <NavBarContainer {...props}>
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      {/* <MenuLinks isOpen={isOpen} /> */}
+      <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
   )
 }

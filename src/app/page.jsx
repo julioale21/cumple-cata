@@ -11,6 +11,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Image,
 } from "@chakra-ui/react";
 
 import { date } from "../constants/common-config";
@@ -103,18 +104,10 @@ export default function Home() {
 
               <MessagesTab />
 
-              <TabPanel width="100%">
-                <Stack width="100%" flexDirection="column">
-                  <Stack
-                    width="100%"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <Stack width="200px">
-                      <Lottie animationData={TicketsAnimation} />
-                    </Stack>
-                  </Stack>
-                  <Stack height={500}>fasdfasdfas</Stack>
+              <TabPanel height="100%" justifyContent="center" alignItems="center" display="flex" width="100%">
+                <Stack alignItems="center" justifyContent="space-around" height="100%" width="100%" flexDirection="column">
+                  <Text fontSize="2xl" color="white" textAlign="center">Find your place</Text>
+                  <Image src="/seats.jpeg" minHeight={250} />
                 </Stack>
               </TabPanel>
             </TabPanels>

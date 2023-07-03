@@ -73,7 +73,7 @@ const MessagesTab = () => {
                             <Field  name='name' validate={validateName}>
                                 {({ field, form }) => (
                                     <FormControl  isInvalid={form.errors.name && form.touched.name}>
-                                        <Input bgGradient="linear(to-l, blue.600, blue.800)" color="white" {...field} placeholder='Enter your name' />
+                                        <Input color="white" {...field} placeholder='Enter your name' />
                                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                                     </FormControl>
                                 )}
@@ -82,7 +82,7 @@ const MessagesTab = () => {
                             <Field name='message' validate={validateMessage}>
                                 {({ field, form }) => (
                                     <FormControl isInvalid={form.errors.message && form.touched.message}>
-                                        <Textarea bgGradient="linear(to-l, blue.600, blue.800)" color="white" {...field} placeholder='Enter your message' />
+                                        <Textarea color="white" {...field} placeholder='Enter your message' />
                                         <FormErrorMessage>{form.errors.message}</FormErrorMessage>
                                     </FormControl>
                                 )}

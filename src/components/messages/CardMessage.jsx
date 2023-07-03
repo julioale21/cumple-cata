@@ -21,16 +21,16 @@ const CardMessage = ({ message }) => {
         transition={{ duration: 1.2 }}
         whileHover={{ scale: 1.1 }}
       >
-        <Card color="white" bgColor="blue.800" maxW="xl" minW={['xs', 'xl']}>
+        <Card color="white" bgColor="blue.900" maxW="xl" minW={['xs', 'xl']}>
           <CardHeader>
             <Flex spacing="4">
               <Flex
                 flex="1"
-                gap={["1", "4"]}
+                gap={[3, 4]}
                 alignItems="center"
                 flexWrap="wrap"
               >
-                <Avatar name={message.name} />
+                <Avatar color="black" backgroundColor="white" name={message.name} />
                 <Box>
                   <Heading size="sm">{message.name}</Heading>
                   <Text fontWeight="light" fontSize="xs">

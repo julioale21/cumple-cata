@@ -10,7 +10,6 @@ import { useMessages } from "@/hooks/useMessages";
 
 import Lottie from "lottie-react";
 import AirplaneLoadingAnimation from "../../animations/loading-airplane.json";
-import BackgroundAnimation from "../../animations/airplane.json";
 
 const MessagesPage = () => {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -60,9 +59,6 @@ const MessagesPage = () => {
         </Stack>
       ) : (
         <Stack>
-          <Stack >
-            <Lottie animationData={BackgroundAnimation} />
-          </Stack>
           <Grid
             paddingX={5}
             templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)"]}

@@ -123,6 +123,7 @@ export default function Home() {
           <Stack
             alignItems={["center", "flex-start"]}
             marginBottom={10}
+            flexWrap="wrap"
             width="100%"
             marginTop={[100, 20]}
             flexDirection={["column", "row"]}
@@ -131,19 +132,49 @@ export default function Home() {
               title="Paris"
               text=" This sofa is perfect for modern tropical spaces, baroque inspired
                 spaces, earthy toned spaces."
-              imageURL="/cata-01.jpeg"
+              imageURL="https://photos.smugmug.com/photos/i-nRT4QsP/0/X4/i-nRT4QsP-X4.jpg"
             />
             <CityCard
               title="New York"
               text="This sofa is perfect for modern tropical spaces, baroque inspired
                 spaces, earthy."
-              imageURL="/cata-02.jpeg"
+              imageURL="https://photos.smugmug.com/photos/i-gMzWk4v/0/X4/i-gMzWk4v-X4.jpg"
             />
             <CityCard
               title="Londres"
               text="This sofa is perfect for modern tropical spaces, baroque inspired
                 spaces, earthy."
-              imageURL="/cata-03.jpeg"
+              imageURL="https://photos.smugmug.com/photos/i-DpgmZDk/0/X5/i-DpgmZDk-X5.jpg"
+            />
+            <CityCard
+              title="New York"
+              text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+              imageURL="https://photos.smugmug.com/photos/i-VdX36dT/0/X5/i-VdX36dT-X5.jpg"
+            />
+            <CityCard
+              title="Londres"
+              text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+              imageURL="https://photos.smugmug.com/photos/i-HGgMnWP/0/X5/i-HGgMnWP-X5.jpg"
+            />
+             <CityCard
+              title="Londres"
+              text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+              imageURL="https://photos.smugmug.com/photos/i-22KX9kM/0/X5/i-22KX9kM-X5.jpg"
+            />
+             <CityCard
+              title="Londres"
+              text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+              imageURL="https://photos.smugmug.com/photos/i-BnVZQcr/0/X5/i-BnVZQcr-X5.jpg"
+            />
+             <CityCard
+              title="Londres"
+              text="This sofa is perfect for modern tropical spaces, baroque inspired
+                spaces, earthy."
+              imageURL="https://photos.smugmug.com/photos/i-XvwjGHR/0/X5/i-XvwjGHR-X5.jpg"
             />
           </Stack>
 

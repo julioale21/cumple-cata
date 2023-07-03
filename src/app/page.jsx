@@ -93,7 +93,7 @@ export default function Home() {
               <TabPanels bgGradient='linear(to-r, gray.300, blue.400, blue.900)' width="100%" height={[450, "100%"]}> */}
 
             <TabPanels
-              backgroundColor="blue.800"
+              backgroundColor="blue.900"
               width="100%"
               height={[450, "100%"]}
             >

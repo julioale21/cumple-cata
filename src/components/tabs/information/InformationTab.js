@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, Image, Stack, TabPanel, Text } from '@chakra-ui/react';
+import { Image, Stack, TabPanel } from '@chakra-ui/react';
 
-import { FlightTypeList } from './FlightTypeList';
-import { InformationItem } from './InformationItem';
-import { FlightClassList } from './InformationClassList';
+// import { FlightTypeList } from './FlightTypeList';
+// import { InformationItem } from './InformationItem';
+// import { FlightClassList } from './InformationClassList';
 
 const InformationTab = () => {
   return (
@@ -30,14 +30,14 @@ const InformationTab = () => {
         </Stack> */}
         <Stack flexDirection="column" justifyContent="center" height="100%">
             <Stack width="100%" gap={5} flexDirection="row" justifyContent="center">
-                <Image width={[150, 200]} src='/departure.png'  />
-                <Image width={[150, 200]} src='/passenger.png'  />
+                <Image width={[160, 200]} src='/departure.png'  />
+                <Image width={[160, 200]} src='/passenger.png'  />
             </Stack>
             <Stack width="100%" flexDirection="row" justifyContent="center">
                 <Image width={470} src='/class.png' />
             </Stack>
             <Stack width="100%" flexDirection="row" justifyContent="center">
-                <Image width={420} height={150} src='/ticket.png' />
+                <Image width={420} height={120} src='/ticket.png' />
             </Stack>
         </Stack>
     </TabPanel>

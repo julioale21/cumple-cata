@@ -96,7 +96,7 @@ export default function Home() {
             <TabPanels
               backgroundColor="blue.900"
               width="100%"
-              height={[450, "100%"]}
+              height={[370, "100%"]}
             >
               <CountDownTab targetDate={targetDate} />
 
@@ -104,9 +104,23 @@ export default function Home() {
 
               <MessagesTab />
 
-              <TabPanel height="100%" justifyContent="center" alignItems="center" display="flex" width="100%">
-                <Stack alignItems="center" justifyContent="space-around" height="100%" width="100%" flexDirection="column">
-                  <Text fontSize="2xl" color="white" textAlign="center">Find your place</Text>
+              <TabPanel
+                height="100%"
+                justifyContent="center"
+                alignItems="center"
+                display="flex"
+                width="100%"
+              >
+                <Stack
+                  alignItems="center"
+                  justifyContent="space-around"
+                  height="100%"
+                  width="100%"
+                  flexDirection="column"
+                >
+                  <Text fontSize="2xl" color="white" textAlign="center">
+                    I have a special place for you
+                  </Text>
                   <Image src="/seats.jpeg" minHeight={250} />
                 </Stack>
               </TabPanel>
@@ -114,22 +128,29 @@ export default function Home() {
           </Tabs>
 
           <Stack
-            alignItems={["center", "flex-start"]}
             marginBottom={10}
             flexWrap="wrap"
             width="100%"
-            marginTop={[100, 20]}
-            flexDirection={["column", "row"]}
+            marginTop={[50, 20]}
           >
-            { cityCardsData.map((cityCard, index) => (
-              <CityCard 
-                key={index} 
-                title={cityCard.title} 
-                text={cityCard.text} 
-                imageURL={cityCard.imageURL} 
-              />
-            ))}
-            
+            <Text textAlign={["center", "start"]} fontWeight="bold" mb={3} fontSize={["3xl", "5xl"]}>
+              Mis destinos soñados
+            </Text>
+            <Stack
+              alignItems={["center", "flex-start"]}
+              flexWrap="wrap"
+              width="100%"
+              flexDirection={["column", "row"]}
+            >
+              {cityCardsData.map((cityCard, index) => (
+                <CityCard
+                  key={index}
+                  title={cityCard.title}
+                  text={cityCard.text}
+                  imageURL={cityCard.imageURL}
+                />
+              ))}
+            </Stack>
           </Stack>
 
           <Stack

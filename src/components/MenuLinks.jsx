@@ -3,7 +3,7 @@ import React from 'react';
 import { Stack } from '@chakra-ui/react';
 import { MenuItem } from './MenuItem';
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isOpen, setIsOpen }) => {
   return (
     <Stack
         width={["100%", "100%", "auto", "auto"]}
@@ -16,8 +16,8 @@ const MenuLinks = ({ isOpen }) => {
         display={isOpen ? 'flex' : ['none', 'none', 'flex', 'flex']}
         paddingRight={[0, 0, 100]}
         >
-        <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/messages">Messages</MenuItem>
+        <MenuItem onClick={() => setIsOpen(false)} to="/">Home</MenuItem>
+        <MenuItem onClick={() => setIsOpen(false)} to="/messages">Messages</MenuItem>
     </Stack>
   )
 }

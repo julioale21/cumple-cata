@@ -15,7 +15,7 @@ const toggle = () => setIsOpen(!isOpen);
     <NavBarContainer {...props}>
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks setIsOpen={setIsOpen} isOpen={isOpen} />
     </NavBarContainer>
   )
 }

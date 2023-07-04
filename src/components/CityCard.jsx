@@ -13,7 +13,7 @@ import Link from 'next/link';
 const CityCard = ({text, title, imageURL }) => {
   return (
     <Link href="/">
-        <Card maxW="xs" marginBottom={10}>
+        <Card minH={520} maxW="xs" marginBottom={10}>
             <CardBody>
                 <Image
                     src={imageURL}
@@ -23,10 +23,10 @@ const CityCard = ({text, title, imageURL }) => {
                     width="100%"
                     objectFit="cover"
                 />
-                <Stack mt='6' spacing='3'>
-                    <Heading size='md'>{title}</Heading>
-                    <Text>
-                    {text}
+                <Stack fontFamily="fantasy" mt='6' spacing='3'>
+                    <Heading color="blue.700" fontFamily="fantasy" size='md'>{title}</Heading>
+                    <Text color="blue.700" fontSize="md" fontWeight="100">
+                        {text}
                     </Text>
                 </Stack>
             </CardBody>

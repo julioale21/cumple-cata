@@ -21,8 +21,8 @@ import { CityCard } from "@/components/CityCard";
 import Lottie from "lottie-react";
 
 import FlightAnimation from "../animations/flight.json";
-import TicketsAnimation from "../animations/tickets.json";
-import CategoryItem from "@/components/categories/CategoryItem";
+
+import { cityCardsData } from "../constants/city-cards-data";
 
 export default function Home() {
   const targetDate = new Date(date);
@@ -121,54 +121,15 @@ export default function Home() {
             marginTop={[100, 20]}
             flexDirection={["column", "row"]}
           >
-            <CityCard
-              title="Paris"
-              text=" This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy toned spaces."
-              imageURL="https://photos.smugmug.com/photos/i-nRT4QsP/0/X4/i-nRT4QsP-X4.jpg"
-            />
-            <CityCard
-              title="New York"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-gMzWk4v/0/X4/i-gMzWk4v-X4.jpg"
-            />
-            <CityCard
-              title="Londres"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-DpgmZDk/0/X5/i-DpgmZDk-X5.jpg"
-            />
-            <CityCard
-              title="New York"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-VdX36dT/0/X5/i-VdX36dT-X5.jpg"
-            />
-            <CityCard
-              title="Londres"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-HGgMnWP/0/X5/i-HGgMnWP-X5.jpg"
-            />
-             <CityCard
-              title="Londres"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-22KX9kM/0/X5/i-22KX9kM-X5.jpg"
-            />
-             <CityCard
-              title="Londres"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-BnVZQcr/0/X5/i-BnVZQcr-X5.jpg"
-            />
-             <CityCard
-              title="Londres"
-              text="This sofa is perfect for modern tropical spaces, baroque inspired
-                spaces, earthy."
-              imageURL="https://photos.smugmug.com/photos/i-XvwjGHR/0/X5/i-XvwjGHR-X5.jpg"
-            />
+            { cityCardsData.map((cityCard, index) => (
+              <CityCard 
+                key={index} 
+                title={cityCard.title} 
+                text={cityCard.text} 
+                imageURL={cityCard.imageURL} 
+              />
+            ))}
+            
           </Stack>
 
           <Stack

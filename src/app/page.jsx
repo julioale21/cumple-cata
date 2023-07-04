@@ -23,6 +23,7 @@ import Lottie from "lottie-react";
 import FlightAnimation from "../animations/flight.json";
 
 import { cityCardsData } from "../constants/city-cards-data";
+import { oswald } from '../utils/fonts';
 
 export default function Home() {
   const targetDate = new Date(date);
@@ -44,12 +45,6 @@ export default function Home() {
             >
               Flight with me
             </Text>
-            {/* <Stack gap={5} flexDirection="row">
-              <CategoryItem icon="/flight.png" type="Flight" />
-              <CategoryItem icon="/hotel.png" type="Hotel" />
-              <CategoryItem icon="/car.png" type="Car" />
-              <CategoryItem icon="/train.png" type="Train" />
-            </Stack> */}
           </Stack>
 
           <Tabs
@@ -90,8 +85,6 @@ export default function Home() {
                 Check In
               </Tab>
             </TabList>
-            {/* 
-              <TabPanels bgGradient='linear(to-r, gray.300, blue.400, blue.900)' width="100%" height={[450, "100%"]}> */}
 
             <TabPanels
               backgroundColor="blue.900"
@@ -118,7 +111,7 @@ export default function Home() {
                   width="100%"
                   flexDirection="column"
                 >
-                  <Text fontSize="2xl" color="white" textAlign="center">
+                  <Text className={oswald.className} fontSize="2xl" fontWeight="extrabold" textAlign="center" color="gray.300">
                     I have a special place for you
                   </Text>
                   <Image src="/seats.jpeg" minHeight={250} />

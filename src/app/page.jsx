@@ -126,7 +126,13 @@ export default function Home() {
             width="100%"
             marginTop={[50, 20]}
           >
-            <Text textAlign={["center", "start"]} fontWeight="bold" mb={3} fontSize={["3xl", "5xl"]}>
+            <Text 
+              fontWeight="extrabold"
+              color="blue.700" 
+              textAlign={["center", "start"]} 
+              mb={3} 
+              fontSize={["3xl", "5xl"]}
+              >
               Mis destinos soñados
             </Text>
             <Stack

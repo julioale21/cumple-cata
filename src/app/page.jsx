@@ -17,8 +17,8 @@ import {
 import { date } from "../constants/common-config";
 import { MessagesTab } from "@/components/tabs/messages/MessagesTab";
 import { CityCard } from "@/components/CityCard";
-
 import Lottie from "lottie-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import FlightAnimation from "../animations/flight.json";
 
@@ -135,21 +135,29 @@ export default function Home() {
               >
               Mis destinos soñados
             </Text>
-            <Stack
-              alignItems={["center", "flex-start"]}
-              flexWrap="wrap"
-              width="100%"
-              flexDirection={["column", "row"]}
-            >
-              {cityCardsData.map((cityCard, index) => (
-                <CityCard
-                  key={index}
-                  title={cityCard.title}
-                  text={cityCard.text}
-                  imageURL={cityCard.imageURL}
-                />
-              ))}
-            </Stack>
+            <AnimatePresence>
+              <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2 }}
+              >
+                <Stack
+                alignItems={["center", "flex-start"]}
+                flexWrap="wrap"
+                width="100%"
+                flexDirection={["column", "row"]}
+              >
+                {cityCardsData.map((cityCard, index) => (
+                  <CityCard
+                    key={index}
+                    title={cityCard.title}
+                    text={cityCard.text}
+                    imageURL={cityCard.imageURL}
+                  />
+                ))}
+              </Stack>
+              </motion.div>
+            </AnimatePresence>
           </Stack>
 
           <Stack

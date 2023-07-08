@@ -20,7 +20,7 @@ const PhotoGallery = ({ images }) => {
                 );
             })}
         </CarouselItems>
-        <Toolbar />
+        <Toolbar visible={ images.length > 1 } />
     </Carousel >
   )
 }

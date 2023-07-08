@@ -15,7 +15,7 @@ import PhotoGallery from "@/components/photos/PhotoGallery";
 import { InputFile } from "@/components/InputImage";
 import { apiServices } from "@/services/apiServices";
 import toast, { Toaster } from "react-hot-toast";
-
+import { date } from "@/constants/common-config";
 
 const PhotoGalleryPage = () => {
   const [image, setImage] = React.useState([]);
@@ -30,14 +30,13 @@ const PhotoGalleryPage = () => {
       setImages(photos);
     };
     fetchPhotos();
-  }, [image])
-  
+  }, [image]);
 
   const uploadImage = async () => {
     setIsUploading(true);
     const result = await apiServices.uploadImageToCloudinary(image);
     if (result.status === 200) {
-      toast.success("Image uploaded successfully"); 
+      toast.success("Image uploaded successfully");
       setImage(null);
       setPreviewImage(null);
       setIsOpenModal(false);
@@ -52,28 +51,103 @@ const PhotoGalleryPage = () => {
     setImage(formImage);
   };
 
+  if (new Date(date).getTime() - new Date().getTime() > 0) {
+    return (
+      <Stack 
+        alignItems="center" 
+        justifyContent="center" 
+        flexDirection="column" 
+        width="100%"
+        paddingX={[5, 0]}
+        minH="80vh"
+      >
+        <Text 
+          textAlign="center" 
+          fontFamily="fantasy" 
+          color="blue.900"
+          >
+            Esta función estará disponible el dia del cumpleaños.
+          </Text>
+        <Text 
+          textAlign="center" 
+          fontFamily="fantasy" 
+          color="blue.900"
+          >
+            Ese dia podrás compartir tus fotos conmigo.
+          </Text>
+        <Text 
+          textAlign="center" 
+          fontFamily="fantasy" 
+          color="blue.900"
+          >
+            No pierdas la oportunidad de compartir conmigo la fiesta desde tu perspectiva y dejarme lindos recuerdos.
+          </Text>
+      </Stack>
+    )
+  }
+
   return (
     <Stack
       mt={50}
+      pb={[10, 20]}
       width="100%"
       alignItems="center"
       flexDirection="column"
       justifyContent="center"
     >
-      <Stack marginBottom="60px" w={["100%", "80%"]} flexDirection="row" justifyContent={["center", "flex-end"]}>
-        <Button colorScheme="blue" onClick={() => setIsOpenModal(true)}>
+      <Stack
+        marginBottom="60px"
+        w={["100%", "80%"]}
+        flexDirection="row"
+        justifyContent={["center", "flex-end"]}
+      >
+        <Button
+          size="sm"
+          colorScheme="blue"
+          onClick={() => setIsOpenModal(true)}
+        >
           Share your picture
         </Button>
       </Stack>
-      { images.length ? (
+      <Stack mb={6} alignItems="center" flexDirection="column">
+        <Text
+          fontWeight="hairline"
+          color="blue.700"
+          fontSize="2xl"
+          fontFamily="fantasy"
+        >
+          Please share a
+        </Text>
+        <Text
+          fontWeight="hairline"
+          color="blue.700"
+          fontSize={["4xl", "6xl"]}
+          fontFamily="fantasy"
+        >
+          Birthday memory
+        </Text>
+      </Stack>
+      {images.length ? (
         <PhotoGallery images={images} />
-      ): (
-        <Stack minH="70vh" width="100%" justifyContent="center" alignItems="center">
-          <Text color="blue.900">No hay fotos aun. Se el primero en compartir la tuya</Text>
+      ) : (
+        <Stack
+          paddingX={[5, 0]}
+          minH={["60", "40vh"]}
+          width="100%"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Text fontFamily="fantasy" color="blue.900">
+            No hay fotos aun. Se el primero en compartir la tuya
+          </Text>
         </Stack>
       )}
 
-      <Modal onClose={() => setIsOpenModal(false)} size={"xl"} isOpen={isOpenModal}>
+      <Modal
+        onClose={() => setIsOpenModal(false)}
+        size={"xl"}
+        isOpen={isOpenModal}
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalBody>
@@ -87,7 +161,7 @@ const PhotoGalleryPage = () => {
                 <Stack width="100%" justifyContent="center" alignItems="center">
                   <Image src={previewImage} />
                   <Button
-                    colorScheme="teal"
+                    colorScheme="blue"
                     loadingText="Uploading"
                     isLoading={isUploading}
                     onClick={uploadImage}

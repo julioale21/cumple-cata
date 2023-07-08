@@ -23,7 +23,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import FlightAnimation from "../animations/flight.json";
 
 import { cityCardsData } from "../constants/city-cards-data";
-import { oswald } from '../utils/fonts';
+import { oswald } from "../utils/fonts";
 
 export default function Home() {
   const targetDate = new Date(date);
@@ -111,7 +111,13 @@ export default function Home() {
                   width="100%"
                   flexDirection="column"
                 >
-                  <Text className={oswald.className} fontSize="2xl" fontWeight="extrabold" textAlign="center" color="gray.300">
+                  <Text
+                    className={oswald.className}
+                    fontSize="2xl"
+                    fontWeight="extrabold"
+                    textAlign="center"
+                    color="gray.300"
+                  >
                     I have a special place for you
                   </Text>
                   <Image src="/seats.jpeg" minHeight={250} />
@@ -126,36 +132,36 @@ export default function Home() {
             width="100%"
             marginTop={[50, 20]}
           >
-            <Text 
+            <Text
               fontWeight="extrabold"
-              color="blue.700" 
-              textAlign={["center", "start"]} 
-              mb={3} 
+              color="blue.700"
+              textAlign={["center", "start"]}
+              mb={3}
               fontSize={["3xl", "5xl"]}
-              >
+            >
               Mis destinos soñados
             </Text>
             <AnimatePresence>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2 }}
               >
                 <Stack
-                alignItems={["center", "flex-start"]}
-                flexWrap="wrap"
-                width="100%"
-                flexDirection={["column", "row"]}
-              >
-                {cityCardsData.map((cityCard, index) => (
-                  <CityCard
-                    key={index}
-                    title={cityCard.title}
-                    text={cityCard.text}
-                    imageURL={cityCard.imageURL}
-                  />
-                ))}
-              </Stack>
+                  alignItems={["center", "flex-start"]}
+                  flexWrap="wrap"
+                  width="100%"
+                  flexDirection={["column", "row"]}
+                >
+                  {cityCardsData.map((cityCard, index) => (
+                    <CityCard
+                      key={index}
+                      title={cityCard.title}
+                      text={cityCard.text}
+                      imageURL={cityCard.imageURL}
+                    />
+                  ))}
+                </Stack>
               </motion.div>
             </AnimatePresence>
           </Stack>
@@ -166,7 +172,7 @@ export default function Home() {
             marginBottom={[50]}
             marginTop={[20, 50]}
           >
-            <Text fontSize="2xl" fontWeight="bold">
+            <Text fontSize="2xl" fontWeight="extrabold" color="blue.700">
               El destino
             </Text>
             <iframe

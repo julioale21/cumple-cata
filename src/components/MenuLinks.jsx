@@ -18,6 +18,7 @@ const MenuLinks = ({ isOpen, setIsOpen }) => {
         >
         <MenuItem onClick={() => setIsOpen(false)} to="/">Home</MenuItem>
         <MenuItem onClick={() => setIsOpen(false)} to="/messages">Messages</MenuItem>
+        <MenuItem onClick={() => setIsOpen(false)} to="/photo-gallery">Photos</MenuItem>
     </Stack>
   )
 }

@@ -3,10 +3,10 @@ import React from 'react';
 import { Button, Flex, HStack } from "@chakra-ui/react";
 import { useCarousel } from "chakra-framer-carousel";
 
-export const Toolbar = () => {
+export const Toolbar = ({ visible = true }) => {
   const { onNext, onPrevious } = useCarousel();
   return (
-    <Flex mt={5} w="full" justify="center">
+    <Flex display={ visible ? "flex" : "none"} mt={5} w="full" justify="center">
       <HStack>
         <Button
           colorScheme="blue"

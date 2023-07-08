@@ -10,9 +10,15 @@ export class apiServices {
         const response =  await axios.post('https://api.cloudinary.com/v1_1/dnwn91rxe/image/upload', data);
 
         const { secure_url } = response.data;
-        const responsePhoto = await axios.post('/api/photo', { url: secure_url });
+        const responsePhoto = await axios.post('/api/photos', { url: secure_url });
         console.log('responsePhoto', responsePhoto);
 
         return response;
+    };
+
+    static getPhotos = async () => {
+        const response = await axios.get('/api/photos');
+        const { photos } = response.data;
+        return photos;
     };
 }

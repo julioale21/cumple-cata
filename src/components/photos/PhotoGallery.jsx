@@ -14,8 +14,8 @@ const PhotoGallery = ({ images }) => {
         <CarouselItems>
             {images.map((image, index) => {
                 return (
-                    <CarouselItem index={index} key={image}>
-                        <Card index={index} image={image} />
+                    <CarouselItem index={index} key={image.uid || index}>
+                        <Card index={index} image={image.url} />
                     </CarouselItem>
                 );
             })}

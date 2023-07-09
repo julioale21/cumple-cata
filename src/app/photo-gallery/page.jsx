@@ -11,11 +11,15 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { Eagle_Lake } from "next/font/google";
+
 import PhotoGallery from "@/components/photos/PhotoGallery";
 import { InputFile } from "@/components/InputImage";
 import { apiServices } from "@/services/apiServices";
 import toast, { Toaster } from "react-hot-toast";
 import { date } from "@/constants/common-config";
+
+const eagle = Eagle_Lake({ subsets: ['latin'], weight: "400" });
 
 const PhotoGalleryPage = () => {
   const [image, setImage] = React.useState([]);
@@ -59,25 +63,23 @@ const PhotoGalleryPage = () => {
         flexDirection="column" 
         width="100%"
         paddingX={[5, 0]}
+        className={eagle.className}
         minH="80vh"
       >
         <Text 
           textAlign="center" 
-          fontFamily="fantasy" 
           color="blue.900"
           >
             Esta función estará disponible el dia del cumpleaños.
           </Text>
         <Text 
-          textAlign="center" 
-          fontFamily="fantasy" 
+          textAlign="center"  
           color="blue.900"
           >
             Ese dia podrás compartir tus fotos conmigo.
           </Text>
         <Text 
-          textAlign="center" 
-          fontFamily="fantasy" 
+          textAlign="center"  
           color="blue.900"
           >
             No pierdas la oportunidad de compartir conmigo la fiesta desde tu perspectiva y dejarme lindos recuerdos.
@@ -109,12 +111,11 @@ const PhotoGalleryPage = () => {
           Share your picture
         </Button>
       </Stack>
-      <Stack mb={6} alignItems="center" flexDirection="column">
+      <Stack className={eagle.className} mb={6} alignItems="center" flexDirection="column">
         <Text
           fontWeight="hairline"
           color="blue.700"
           fontSize="2xl"
-          fontFamily="fantasy"
         >
           Please share a
         </Text>
@@ -122,7 +123,6 @@ const PhotoGalleryPage = () => {
           fontWeight="hairline"
           color="blue.700"
           fontSize={["4xl", "6xl"]}
-          fontFamily="fantasy"
         >
           Birthday memory
         </Text>
@@ -135,9 +135,10 @@ const PhotoGalleryPage = () => {
           minH={["60", "40vh"]}
           width="100%"
           justifyContent="center"
+          className={eagle.className}
           alignItems="center"
         >
-          <Text fontFamily="fantasy" color="blue.900">
+          <Text color="blue.900">
             No hay fotos aun. Se el primero en compartir la tuya
           </Text>
         </Stack>

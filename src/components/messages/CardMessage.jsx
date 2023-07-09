@@ -19,7 +19,6 @@ const CardMessage = ({ message }) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        whileHover={{ scale: 1.1 }}
       >
         <Card color="white" bgColor="blue.900" maxW="xl" minW={['xs', 'xl']}>
           <CardHeader>
